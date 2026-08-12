@@ -1,3 +1,5 @@
+import bcrypt from "https://cdn.jsdelivr.net/npm/bcryptjs@3.0.2/+esm";
+
 $(function () {
     //  LOGIN FORM SUBMISSION
 
@@ -23,12 +25,43 @@ $(function () {
     if (!isValid) return;
   //  USER AUTHENTICATION
     try {
-      const users = await api.get(`users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`);
-      const user = users[0];
-      if (!user) {
-        await Swal.fire("Invalid credentials", "Please check your email and password.", "error");
-        return;
-      }
+      // const users = await api.get(`users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`);
+      // const user = users[0];
+      // if (!user) {
+      //   await Swal.fire("Invalid credentials", "Please check your email and password.", "error");
+      //   return;
+      // }
+
+      const users = await api.get(
+    `users?email=${encodeURIComponent(email)}`
+);
+
+const user = users[0];
+
+if (!user) {
+    await Swal.fire(
+        "Invalid credentials",
+        "Please check your email and password.",
+        "error"
+    );
+    return;
+}
+
+const passwordMatch = await bcrypt.compare(
+    password,
+    user.password
+);
+
+if (!passwordMatch) {
+    await Swal.fire(
+        "Invalid credentials",
+        "Please check your email and password.",
+        "error"
+    );
+    return;
+}
+
+
       // Store logged-in user
       localStorage.setItem("loggedInUser", JSON.stringify(user));
       await Swal.fire("Login successful", `Welcome ${user.name}.`, "success");

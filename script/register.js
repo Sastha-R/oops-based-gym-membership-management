@@ -1,3 +1,5 @@
+import bcrypt from "https://cdn.jsdelivr.net/npm/bcryptjs@3.0.2/+esm";
+
 $(function () {
   //  REGISTRATION FORM SUBMISSION
   $("#registerForm").on("submit", async function (event) {
@@ -44,14 +46,25 @@ $(function () {
         return;
       }
 // Create a new customer account
-      await api.post("users", {
-        name,
-        email,
-        phone,
-        password,
-        role: "customer",
-        createdAt: new Date().toISOString()
-      });
+      // await api.post("users", {
+      //   name,
+      //   email,
+      //   phone,
+      //   password,
+      //   role: "customer",
+      //   createdAt: new Date().toISOString()
+      // });
+
+      const hashedPassword = await bcrypt.hash(password, 10);
+
+await api.post("users", {
+    name,
+    email,
+    phone,
+    password: hashedPassword,
+    role: "customer",
+    createdAt: new Date().toISOString()
+});
 
       await Swal.fire("Registration successful", "You can now login as a customer.", "success");
       bootstrap.Modal.getInstance(document.getElementById("registerModal")).hide();

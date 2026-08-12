@@ -1,94 +1,40 @@
 {
   "users": [
     {
-      "name": "hector",
-      "email": "hector@gmail.com",
-      "phone": "9042013762",
-      "password": "123456789@hH",
-      "role": "owner",
-      "createdAt": "2026-06-26T06:27:49.235Z",
-      "id": "weBHLOGvRqs"
-    },
-    {
-      "name": "nacho",
-      "email": "nacho@gmail.com",
-      "phone": "8976543654",
-      "password": "123456789@nN",
+      "name": "testing",
+      "email": "testing@gmail.com",
+      "phone": "9087654567",
+      "password": "$2b$10$2avtB2kXf88dGi7R6bxWTun.M2FjFimkFgK7EBLe.Ie32lQlYuKIe",
       "role": "customer",
-      "createdAt": "2026-06-26T05:49:38.070Z",
-      "id": "cV5KsMv62RQ"
-    },
-    {
-      "name": "mike",
-      "email": "mike@gmail.com",
-      "phone": "8976543683",
-      "password": "123456789@mM",
-      "role": "customer",
-      "createdAt": "2026-06-26T05:53:09.074Z",
-      "id": "hhKN1iYbUhQ"
-    },
-    {
-      "name": "jesse",
-      "email": "jesse@gmail.com",
-      "phone": "8987665476",
-      "password": "123456789@jJ",
-      "role": "customer",
-      "createdAt": "2026-06-27T10:11:41.699Z",
-      "id": "UTTu4Dqu8P4"
+      "createdAt": "2026-08-12T09:32:00.543Z",
+      "id": "HxVC2WOOxQ8"
     },
     {
       "name": "lalo",
       "email": "lalo@gmail.com",
-      "phone": "9809809542",
-      "password": "123456789@lL",
+      "phone": "1234567899",
+      "password": "$2b$10$jS.q6pHcbY6FuxwxkXtvBulLcsUvlMtS2m5wdV6sDCUoKIJ4gOFda",
       "role": "customer",
-      "createdAt": "2026-06-27T10:12:16.537Z",
-      "id": "eMBhV9o5Z7s"
+      "createdAt": "2026-08-12T09:51:37.655Z",
+      "id": "ahi5RLpc3B8"
     },
     {
-      "name": "tuco",
-      "email": "tuco@gmail.com",
-      "phone": "9876543218",
-      "password": "123456789@tT",
-      "role": "customer",
-      "createdAt": "2026-06-27T10:12:46.473Z",
-      "id": "go8ite1OCWc"
-    },
-    {
-      "name": "saul",
-      "email": "saul@gmail.com",
-      "phone": "9876543231",
-      "password": "123456789@sS",
-      "role": "customer",
-      "createdAt": "2026-06-27T10:14:16.774Z",
-      "id": "apzdoiiklZE"
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "phone": "9876543213",
+      "password": "$2b$10$2YmFvgoCcD3kl3U28MT5N.58d4De70JQUpQI7On5LsAX1vq6dBnaq",
+      "role": "owner",
+      "createdAt": "2026-08-12T09:52:08.627Z",
+      "id": "2Woga-_ebwk"
     },
     {
       "name": "walter",
       "email": "walter@gmail.com",
-      "phone": "9876543212",
-      "password": "123456789@wW",
+      "phone": "1234567890",
+      "password": "$2b$10$v9Mk/tLhfLK/896SM2jHY.em3fDw9dx1FSCpZxG7mmRBoQzo7fZ1m",
       "role": "customer",
-      "createdAt": "2026-06-27T10:14:56.444Z",
-      "id": "w49ZqoIEvZY"
-    },
-    {
-      "name": "sam sulak",
-      "email": "sam@gmail.com",
-      "phone": "9042013766",
-      "password": "123456789@sS",
-      "role": "customer",
-      "createdAt": "2026-06-29T12:44:00.988Z",
-      "id": "yc8p5j1MRt0"
-    },
-    {
-      "name": "luffy",
-      "email": "onepiece@gmail.com",
-      "phone": "9488229740",
-      "password": "123456789@lL",
-      "role": "customer",
-      "createdAt": "2026-06-29T14:02:33.411Z",
-      "id": "SAov2yLcM1E"
+      "createdAt": "2026-08-12T09:53:18.040Z",
+      "id": "YC9b3uCxDbk"
     }
   ],
   "plans": [
@@ -105,7 +51,7 @@
     {
       "planName": "Monthly",
       "duration": 30,
-      "price": 1500,
+      "price": 1501,
       "ageGroup": "Adult",
       "status": "Active",
       "isDeleted": false,
@@ -181,6 +127,16 @@
       "isDeleted": false,
       "createdAt": "2026-06-29T13:59:50.457Z",
       "id": "0-0tV8bRZ-w"
+    },
+    {
+      "planName": "sdwqd",
+      "duration": 5,
+      "price": 43443,
+      "ageGroup": "Teen",
+      "status": "Active",
+      "isDeleted": false,
+      "createdAt": "2026-08-12T09:41:06.707Z",
+      "id": "2KMPWSsXQsk"
     }
   ],
   "memberships": [
@@ -211,6 +167,13 @@
       "purchaseDate": "2026-06-28",
       "expiryDate": "2026-07-28",
       "id": "GlIS2x2AZBw"
+    },
+    {
+      "userId": "HxVC2WOOxQ8",
+      "planId": "Sk25iOFgoU0",
+      "purchaseDate": "2026-08-11",
+      "expiryDate": "2026-09-10",
+      "id": "_Y4B7TzVODU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
