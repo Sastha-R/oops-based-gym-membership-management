@@ -9,7 +9,7 @@ let ownername;
 
 document.addEventListener("DOMContentLoaded", async () => {
    // Verify owner access
-  ownername = requireRole("owner");
+  ownername = auth.requireRole("owner");
   document.getElementById("Welcome_owner").textContent = `Welcome ${ownername.name.toUpperCase()}`; 
   // load dashboard data
   bindOwnerEvents();
@@ -280,3 +280,4 @@ function changeMemberPage(page) {
   memberPage = page;
   renderMembers();
 }
+

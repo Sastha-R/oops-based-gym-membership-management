@@ -6,7 +6,7 @@ let availableFilter = "All";
 document.addEventListener("DOMContentLoaded", async () => {
     // Verify customer access
 
-  customerUser = requireRole("customer");
+  customerUser = auth.requireRole("customer");
   if (!customerUser) return;
   document.getElementById("customerWelcome").textContent = `Welcome ${customerUser.name}`;
   bindCustomerEvents();
