@@ -169,8 +169,8 @@ The project uses JSON Server with `data/db.json`.
 The database includes the following owner account:
 
  Role:Owner 
- Email:`hector@gmail.com`
- Password: `123456789@hH`
+ Email:`admin@gmail.com`
+ Password: `123456789@aA`
 
 Additional customer accounts are present in `data/db.json`.
 
