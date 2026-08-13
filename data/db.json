@@ -44,6 +44,15 @@
       "role": "customer",
       "createdAt": "2026-08-13T04:20:18.319Z",
       "id": "2B5Lapq2hvw"
+    },
+    {
+      "name": "arnold",
+      "email": "arnold@gmail.com",
+      "phone": "9087654567",
+      "password": "$2b$10$zggsE2oXqAtwSUOURGf5lO/QwDDAnOFLmmuY85huCluIvMu8xf.wy",
+      "role": "customer",
+      "createdAt": "2026-08-13T10:41:49.561Z",
+      "id": "LMFSKP3rFBk"
     }
   ],
   "plans": [
