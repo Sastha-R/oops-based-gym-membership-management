@@ -35,6 +35,15 @@
       "role": "customer",
       "createdAt": "2026-08-12T09:53:18.040Z",
       "id": "YC9b3uCxDbk"
+    },
+    {
+      "name": "jesse",
+      "email": "jesse@gmail.com",
+      "phone": "9086751222",
+      "password": "$2b$10$inDLNKPJ1e8fNzZTdv2k9O93covqiisx/m1IwzBSyyiggrckBMaeu",
+      "role": "customer",
+      "createdAt": "2026-08-13T04:20:18.319Z",
+      "id": "2B5Lapq2hvw"
     }
   ],
   "plans": [
@@ -51,7 +60,7 @@
     {
       "planName": "Monthly",
       "duration": 30,
-      "price": 1501,
+      "price": 1500,
       "ageGroup": "Adult",
       "status": "Active",
       "isDeleted": false,
@@ -147,6 +156,26 @@
       "isDeleted": false,
       "createdAt": "2026-08-12T12:22:10.353Z",
       "id": "UCngE8H2XVI"
+    },
+    {
+      "planName": "testing 222",
+      "duration": 21121,
+      "price": 211,
+      "ageGroup": "Teen",
+      "status": "Active",
+      "isDeleted": false,
+      "createdAt": "2026-08-13T05:37:48.485Z",
+      "id": "3KnQu16kWsE"
+    },
+    {
+      "planName": "ef",
+      "duration": 111,
+      "price": 11,
+      "ageGroup": "Teen",
+      "status": "Active",
+      "isDeleted": false,
+      "createdAt": "2026-08-13T09:17:35.016Z",
+      "id": "zmCN8IEOK74"
     }
   ],
   "memberships": [
