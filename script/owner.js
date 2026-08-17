@@ -9,7 +9,7 @@ let ownername;
 
 document.addEventListener("DOMContentLoaded", async () => {
    // Verify owner access
-  ownername = auth.requireRole("owner");
+  ownername = User.requireRole("owner");
   document.getElementById("Welcome_owner").textContent = `Welcome ${ownername.name.toUpperCase()}`; 
   // load dashboard data
   bindOwnerEvents();
@@ -46,9 +46,9 @@ function bindOwnerEvents() {
 }
 
 async function loadOwnerData() {
-    plans = await api.get("plans");
-    users = await api.get("users");
-    memberships = await api.get("memberships");
+    plans = await Plan.getAll();
+    users = await User.getAll();
+    memberships = await Membership.getAll();
 
     renderDashboardCards();
     renderPlans();
@@ -177,10 +177,10 @@ async function savePlan(event) {
   };
 
   if (id) {
-    await api.patch("plans", id, payload);
+    await Plan.update(id, payload);
     await Swal.fire("Plan updated", "Plan details were saved.", "success");
   } else {
-    await api.post("plans", { ...payload, isDeleted: false, createdAt: new Date().toISOString() });
+    await Plan.create({ ...payload, isDeleted: false, createdAt: new Date().toISOString() });
     await Swal.fire("Plan added", "The new plan is ready.", "success");
   }
 
@@ -197,7 +197,7 @@ async function softDeletePlan(planId) {
     confirmButtonText: "Delete"
   });
   if (!result.isConfirmed) return;
-  await api.patch("plans", planId, { isDeleted: true });
+  await Plan.update(planId, { isDeleted: true });
   await Swal.fire("Deleted", "Plan moved to Deleted.", "success");
   await loadOwnerData();
 }
@@ -211,7 +211,7 @@ async function restorePlan(planId) {
     confirmButtonText: "Restore"
   });
   if (!result.isConfirmed) return;
-  await api.patch("plans", planId, { isDeleted: false });
+  await Plan.update(planId, { isDeleted: false });
   await Swal.fire("Restored", "Plan restored successfully.", "success");
   await loadOwnerData();
 }

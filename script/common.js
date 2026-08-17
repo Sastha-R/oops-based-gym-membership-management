@@ -151,5 +151,5 @@ function setupThemeToggle() {
 
 document.addEventListener("DOMContentLoaded", () => {
   setupThemeToggle();
-  auth.setupLogout();
+  User.setupLogout();
 });

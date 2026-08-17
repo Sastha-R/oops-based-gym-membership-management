@@ -162,9 +162,7 @@ $(function () {
 
                 // CHECK IF EMAIL ALREADY EXISTS
 
-                const existingUsers = await api.get(
-                    `users?email=${encodeURIComponent(email)}`
-                );
+                const existingUsers = await User.getByEmail(email);
 
                 if (existingUsers.length) {
 
@@ -178,7 +176,7 @@ $(function () {
 
                 // CREATE CUSTOMER ACCOUNT
 
-                await api.post("users", {
+                await User.create({
                     name,
                     email,
                     phone,

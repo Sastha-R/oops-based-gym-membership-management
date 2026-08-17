@@ -6,7 +6,7 @@ let availableFilter = "All";
 document.addEventListener("DOMContentLoaded", async () => {
     // Verify customer access
 
-  customerUser = auth.requireRole("customer");
+  customerUser = User.requireRole("customer");
   if (!customerUser) return;
   document.getElementById("customerWelcome").textContent = `Welcome ${customerUser.name}`;
   bindCustomerEvents();
@@ -33,8 +33,8 @@ function bindCustomerEvents() {
 
 async function loadCustomerData() {
   [customerPlans, customerMemberships] = await Promise.all([
-    api.get("plans"),
-    api.get(`memberships?userId=${customerUser.id}`)
+    Plan.getAll(),
+    Membership.getByUserId(customerUser.id)
   ]);
   renderCustomerCards();
   renderAvailablePlans();
@@ -95,7 +95,7 @@ function renderAvailablePlans() {
 async function buyPlan(planId) {
   const plan = customerPlans.find((item) => String(item.id) === String(planId));
   if (!plan) return;
-  await api.post("memberships", {
+  await Membership.create({
     userId: customerUser.id,
     planId: plan.id,
     purchaseDate: todayAtMidnight().toISOString().slice(0, 10),
@@ -111,7 +111,7 @@ async function renewPlan(planId) {
   const plan = customerPlans.find((item) => String(item.id) === String(planId));
   const membership = getCustomerMembership();
   if (!plan || !membership) return;
-  await api.patch("memberships", membership.id, {
+  await Membership.update(membership.id, {
     planId: plan.id,
     purchaseDate: todayAtMidnight().toISOString().slice(0, 10),
     expiryDate: addDays(plan.duration)

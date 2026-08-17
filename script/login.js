@@ -32,9 +32,7 @@ $(function () {
       //   return;
       // }
 
-      const users = await api.get(
-    `users?email=${encodeURIComponent(email)}`
-);
+      const users = await User.getByEmail(email);
 
 const user = users[0];
 
